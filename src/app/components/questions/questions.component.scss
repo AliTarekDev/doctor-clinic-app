@@ -1,0 +1,90 @@
+
+$mainColor: #25D366;
+
+.faq-image {
+    // max-width: 100%;
+    // min-height: 600px;
+    // background-image: url('../../../assets/questions/background.jpeg');
+    // background-position: center center;
+    // background-size: cover;
+    // background-repeat: no-repeat;
+
+    img {
+        max-width: 100%;
+        max-height: 100%;
+        vertical-align: middle;
+        border-style: none;
+    }
+}
+
+.faq-accordion {
+    max-width: 600px;
+    padding-top: 0px;
+    padding-bottom: 60px;
+    padding-right: 50px;
+    .section-title {
+        text-align: right;
+    }
+    .accordion {
+        list-style-type: none;
+        padding-left: 0;
+        margin-bottom: 0;
+        margin-top: 30px;
+        .accordion-item {
+            display: block;
+            -webkit-box-shadow: 0 0 1.25rem rgb(108 118 134 / 10%);
+            box-shadow: 0 0 1.25rem rgb(108 118 134 / 10%);
+            background: #fff;
+            margin-bottom: 10px;
+            .accordion-title {
+                padding: 12px 20px 12px 51px;
+                color: #121521;
+                position: relative;
+                border-bottom: 1px solid transparent;
+                margin-bottom: -1px;
+                display: block;
+                font-size: 15px;
+                font-weight: 700;
+                font-family: din, din;
+                text-align: right;
+                text-decoration: none;
+                &.active + .accordion-content {
+                    display: block;
+                }
+                i {
+                    position: absolute;
+                    right: -30px;
+                    top: 0;
+                    width: 40px;
+                    text-align: center;
+                    height: 100%;
+                    line-height: 45px;
+                    background: $mainColor;
+                    color: #ffffff;
+                    font-size: 14px;
+                    -webkit-transition: .5s;
+                    transition: .5s;
+                }
+            }
+            .accordion-content {
+                display: none;
+                position: relative;
+                padding: 15px;
+                font-size: 14.5px;
+                border-top: 1px solid #d8d6d6;
+                text-align: right;
+            }
+        }
+    }
+}
+
+
+/*Media query*/
+
+@media only screen and (max-width: 767px){
+.faq-image  {
+    min-height: 400px;
+}
+
+
+}

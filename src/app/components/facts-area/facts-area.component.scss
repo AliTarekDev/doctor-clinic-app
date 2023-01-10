@@ -1,0 +1,75 @@
+
+.fun-facts-area {
+    position: relative;
+    z-index: 1;
+    background-color: #121521;
+    background: transparent linear-gradient(
+90deg
+, #075E54 0%, #128C7E 100%) 0% 0% no-repeat padding-box;
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.single-fun-facts {
+    text-align: center;
+    .icon {
+        font-size: 45px;
+        color: #ffffff;
+        margin-bottom: 10px;
+        i{
+            font-size: 35px;
+        }
+        
+    }
+
+    p {
+        color: #ffffff;
+        line-height: initial;
+        margin-top: 5px;
+    }
+    h3 {
+        color: #fff;
+        margin-bottom: 0;
+        position: relative;
+        padding-left: 5px;
+        font-size: 50px;
+        font-weight: 600;
+        position: relative;
+        .optional-icon {
+            position: absolute;
+            top: -10px;
+            left: 60px;
+            font-size: 23px;
+            font-weight: 700;
+        }
+    }
+    
+}
+
+
+
+@media only screen and (max-width: 767px){
+    .single-fun-facts {
+        margin-bottom: 30px;
+        text-align: center;
+        .icon {
+            font-size: 30px;
+            margin-bottom: 20px;
+            i{
+                font-size: inherit;
+            }
+        }
+        h3 {
+            font-size: 30px;
+            .optional-icon {
+                position: absolute;
+                top: -20px;
+                left: 50%;
+                font-size: 23px;
+                font-weight: 700;
+            }
+        }
+    }
+    }
+    

@@ -1,0 +1,62 @@
+{
+  "name": "doctor-clinic",
+  "version": "0.0.0",
+  "scripts": {
+    "ng": "ng",
+    "build": "ng build",
+    "watch": "ng build --watch --configuration development",
+    "test": "ng test",
+    "start": "node server.js",
+    "heroku-postbuild": "ng build --prod"
+  },
+  "private": true,
+  "dependencies": {
+    "@angular/animations": "~12.0.0",
+    "@angular/common": "~12.0.0",
+    "@angular/compiler": "~12.0.0",
+    "@angular/core": "~12.0.0",
+    "@angular/forms": "~12.0.0",
+    "@angular/platform-browser": "~12.0.0",
+    "@angular/platform-browser-dynamic": "~12.0.0",
+    "@angular/router": "~12.0.0",
+    "@fortawesome/fontawesome-free": "^5.15.4",
+    "@rxweb/reactive-form-validators": "^2.1.6",
+    "bootstrap-rtl": "^3.3.4",
+    "bootstrap-v4-rtl": "^4.6.0-2",
+    "express": "^4.17.1",
+    "jquery": "^3.6.0",
+    "lodash": "^4.17.21",
+    "moment": "^2.29.1",
+    "ngx-owl-carousel-2": "^6.0.10",
+    "ngx-owl-carousel-o": "^6.0.0",
+    "ngx-slick-carousel": "^0.5.1",
+    "odometer-angular": "^1.0.0",
+    "path": "^0.12.7",
+    "popper.js": "^1.16.1",
+    "rxjs": "~6.6.0",
+    "slick-carousel": "^1.8.1",
+    "tm-ng-odometer": "^1.1.8",
+    "tm-odometer": "^1.0.6",
+    "tslib": "^2.3.1",
+    "zone.js": "~0.11.4"
+  },
+  "devDependencies": {
+    "@angular-devkit/build-angular": "~12.0.0",
+    "@angular/cli": "~12.0.0",
+    "@angular/compiler-cli": "~12.0.0",
+    "@types/jasmine": "~3.6.0",
+    "@types/jquery": "^3.5.6",
+    "@types/node": "^12.11.1",
+    "jasmine-core": "~3.7.0",
+    "karma": "~6.3.0",
+    "karma-chrome-launcher": "~3.1.0",
+    "karma-coverage": "~2.0.3",
+    "karma-jasmine": "~4.0.0",
+    "karma-jasmine-html-reporter": "^1.5.0",
+    "typescript": "~4.2.3"
+  },
+  "engines": {
+    "node": "14.15.5",
+    "npm": "6.14.11"
+  }
+}

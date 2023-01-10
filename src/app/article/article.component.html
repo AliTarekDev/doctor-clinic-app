@@ -1,0 +1,29 @@
+<div class="article w-100">
+    <div class="main-article mt-3">
+            <div class="section-title w-100">
+                <span>الخدمات الرئيسية</span>
+                <h2> خدماتنا</h2>
+                <p> توفر لك اطلب دكتور خدمة صحية متكاملة في منزلك لمساعدتك دائمًا في الحفاظ على صحتك
+
+                </p>
+            </div>
+    </div>
+    <div class="box-content">
+        <div class="container">
+            <div class="row">
+    
+                 <div class="col-lg-3 col-md-6 col-sm-6" *ngFor="let item of articleArr">
+                        <div class="main-services-box">
+                            <div class="icon">
+                    
+                            </div>
+                            <h3>{{item.title}}</h3>
+                            <p>{{item.content}}</p>
+                        </div>
+                     </div>
+                 </div>
+          
+        </div>
+    </div>
+   
+</div>

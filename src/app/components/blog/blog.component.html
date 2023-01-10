@@ -1,0 +1,34 @@
+<div class="blog-area pd-t">
+    <div class="section-title w-100">
+        <h2>مقالات طبيه</h2>
+        <p>مقالاتنا الطبيه</p>
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4 col-md-6" *ngFor="let blog of blogs">
+                <a href="#"[routerLink]="blog.link">
+                    <div class="single-blog-post">
+                        <div class="post-image">
+                            <a href="#">
+                                <img [src]="blog.image" alt="" draggable="false">
+                            </a>
+                        </div>
+    
+                        <div class="post-content">
+                            <h3><a href="#">{{blog.title}}</a></h3>
+                            <p>{{blog.content}}</p>
+                        </div>
+                    </div>
+                </a>
+               
+            </div>
+        </div>
+    </div>
+    <div class="more-services-btn">
+        <a href="/" routerLink="/articles" class="btn btn-primary">
+            أظهر كل المقالات
+            <i class="fas fa-angle-right"></i>
+        </a>
+    </div>
+</div>

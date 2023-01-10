@@ -1,0 +1,160 @@
+<div class="appointment-area pd-t">
+    <div class="container">
+        <div class="appointment-content">
+            <div class="section-title w-100">
+                <span>احجز الان</span>
+                <h2>نحن هنا من اجلك</h2>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <div class="tab produts-details-tab">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="tab-content">
+                                <div class="tabs-item">
+                                    <div class="products-details-tab-content">
+                                        <form #bookForm= "ngForm" (ngSubmit)="bookNow(bookForm)">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="far fa-user"></i>
+                                                        </div>
+                                                        <label>الاسم</label>
+                                                        <input type="text" required  minlength="3" maxlength="50" class="form-control" placeholder="الاسم" #name= "ngModel"
+                                                         ngModel [(ngModel)]="bookForm.value.PatientName" name="PatientName" id="name">
+                                                        <div class="alert alert-danger my-2" *ngIf="name.invalid  && (name.touched)">
+                                                            <p *ngIf="name.errors?.required">يجب ادخال الاسم !</p>
+                                                            <p *ngIf="name.errors?.minlength">يجب الا يقل الاسم عن 3 احرف !</p>
+                                                            <p *ngIf="name.errors?.maxlength">يجب الا يزيد الاسم عن خمسين حرف  !</p>        
+                                                        </div>
+                                                       
+                                                    </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-user-nurse"></i>
+                                                        </div>
+                                                        <label>اختار الخدمه</label>
+                                                        <div class="select">
+                                                            <select name="ServiceID" #serviceID= "ngModel" required ngModel [(ngModel)]="bookForm.value.ServiceID">
+                                                                <option [value]="item.ServiceID" *ngFor="let item of services" [disabled]="item.disabled">{{item.ServiceName}}</option>
+                                                            </select>
+
+                                                        </div>
+                                                        <div class="alert alert-danger my-2" *ngIf="serviceID.invalid && (serviceID.touched)">
+                                                            <p *ngIf="serviceID.errors?.required">يجب ادخال الخدمة !</p>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-phone-volume"></i>
+                                                        </div>
+                                                        <label>التليفون</label>
+                                                        <input type="text" class="form-control" pattern="[0-9 ]{11}" ngModel [(ngModel)]="bookForm.value.Phone" 
+                                                        placeholder="التليفون" name="Phone" required id="text" #phone= "ngModel">
+
+                                                        <div class="alert alert-danger my-2" *ngIf="phone.invalid && (phone.touched)">
+                                                            <p *ngIf="phone.errors?.required">يجب ادخال رقم التليفون!</p>
+                                                            <p *ngIf="phone.errors?.pattern">!يجب ادخال ارقام مكونه من 11 رقم</p>
+                                                            <p *ngIf="phone.errors?.max">!يجب ادخال رقم تليفون صحيح</p>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-calendar-alt"></i>
+                                                        </div>
+                                                        <label>اختر التاريخ</label>
+                                                        <input type="date" class="form-control"
+                                                         (change)="getDate($event)" 
+                                                          ngModel [(ngModel)]="bookForm.value.Date" required #date="ngModel" placeholder="mm/dd/yy" name="Date" id="date">
+
+                                                          <div class="alert alert-danger my-2" *ngIf="date.invalid && (date.touched)">
+                                                            <p *ngIf="date.errors?.required">يجب ادخال التاريخ !</p>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="far fa-clock"></i>
+                                                        </div>
+                                                        <label>اضاقة وقت</label>
+                                                        <input type="time" (change)="getTime($event)" 
+                                                        class="form-control" ngModel #time="ngModel" [(ngModel)]="bookForm.value.Time" placeholder="15.00AM" 
+                                                        name="Time" id="time" required>
+
+                                                        <div class="alert alert-danger my-2" *ngIf="time.invalid && (time.touched)">
+                                                            <p *ngIf="time.errors?.required">يجب ادخال الوقت !</p>
+                                                        </div>
+                                                    </div>
+                                                </div><!-- ./col -->
+
+                                               
+
+
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-map-marker-alt"></i>
+                                                        </div>
+                                                        <label>العنوان</label>
+                                                        <textarea  name="Address" id="" ngModel [(ngModel)]="bookForm.value.Address"
+                                                         cols="30" rows="3" class="form-control" required #address= "ngModel" placeholder="ادخل العنوان بالتفصيل"></textarea> 
+                                                        
+                                                         <div class="alert alert-danger my-2" *ngIf="address.invalid && (address.touched)">
+                                                            <p *ngIf="address.errors?.required">يجب ادخال العنوان !</p>
+                                                        </div>
+                                                        </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-12 col-md-12">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-comment-medical"></i>
+                                                        </div>
+                                                        <label>ما هي حالاتك؟</label>
+                                                        <textarea  name="MedicalCase" id="" cols="30" rows="3" 
+                                                        ngModel [(ngModel)]="bookForm.value.MedicalCase" class="form-control"
+                                                         placeholder="نبذه عن حالتك"required="" #case= "ngModel"></textarea>                
+                                                         
+                                                         <div class="alert alert-danger my-2" *ngIf="case.invalid && (case.touched)">
+                                                            <p *ngIf="case.errors?.required">يجب ادخال الخدمة !</p>
+                                                        </div>
+                                                         </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-12 col-md-12 mt-5">
+                                                    <div class="more-services-btn">
+                                                        <button href="" class="btn btn-primary" [disabled]="bookForm.invalid">
+                                                            ارسل طلب
+                                                            <i class="fas fa-angle-right"></i>  
+                                                           
+                                                        </button>     
+                                                        <div class="alert alert-danger my-2" *ngIf="bookForm.touched">
+                                                            <p *ngIf="bookForm.invalid">يجب ادخال جميع الحقول  !</p> 
+                                                        </div>          
+                                                       
+                                                     </div>
+                                                </div><!-- ./col -->
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

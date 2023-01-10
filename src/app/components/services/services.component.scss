@@ -1,0 +1,16 @@
+
+.services {
+    overflow: hidden;
+}
+
+.col-lg-4{
+    float: right;
+}
+
+
+@media (max-width:575px) {
+    .col-sm-6 {
+        flex: 0 0 50%;
+        max-width: 50%;
+    }
+}

@@ -1,0 +1,30 @@
+
+.feedback-area {
+    position: relative;
+    background: #fff;
+}
+
+.feed-back {
+    -webkit-box-shadow: 0 10px 55px 5px rgb(137 173 255 / 10%);
+    box-shadow: 0 10px 55px 5px rgb(137 173 255 / 10%);
+    padding: 0px;
+    .feedback-slides {
+        position: relative;
+       .slide-image {
+           width: 100%;
+           margin: auto;
+           position: relative;
+          
+           img {
+               border-radius: 50%;
+               width: 50%;
+               margin:20px auto;
+
+           }
+       }
+    }
+}
+
+.content {
+    text-align: center;
+}

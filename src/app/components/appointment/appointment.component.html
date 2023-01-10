@@ -1,0 +1,206 @@
+<div class="appointment-area pd-t">
+    <div class="container">
+        <div class="appointment-content">
+            <div class="section-title w-100">
+                <span>join our team</span>
+                <h2>We are here for you</h2>
+            </div>
+
+            <div class="col-lg-12 col-md-12">
+                <div class="tab produts-details-tab">
+                    <div class="row">
+                        <div class="col-lg-12 col-md-12">
+                            <div class="tab-content">
+                                <div class="tabs-item">
+                                    <div class="products-details-tab-content">
+                                        <form [formGroup]= "form" (ngSubmit)="joinUs()"  enctype="multipart/form-data">
+                                            <div class="row">
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="far fa-user"></i>
+                                                        </div>
+                                                        <label>الاسم</label>
+                                                        <input type="text" class="form-control" 
+                                                        placeholder="الاسم" name="Name"
+                                                         id="name"
+                                                         formControlName="Name">
+                                                    </div>
+                                                    <div class="alert alert-danger my-2" 
+                                                        *ngIf="form.get('Name')?.invalid  && (form.get('Name')?.touched) ">
+                                                            <div *ngIf="form.get('Name')?.errors?.required">يجب ادخال الأسم!</div>
+                                                            <div *ngIf="form.get('Name')?.errors?.minLength">يجب الا يقل الاسم عن 3 احرف !</div>
+                                                    </div>
+                                                   
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-phone-volume"></i>
+                                                        </div>
+                                                        <label>التليفون</label>
+                                                        <input type="text" 
+                                                        class="form-control" 
+                                                        placeholder="التليفون"
+                                                        name="phone" id="text"
+                                                        formControlName="Phone">
+                                                    </div>
+                                                    <div class="alert alert-danger my-2" 
+                                                      *ngIf="form.get('Phone')?.invalid && (form.get('Phone')?.touched)">
+                                                        <div *ngIf="form.get('Phone')?.errors?.required">يجب ادخال رقم التليفون!</div>
+                                                        <div *ngIf="form.get('Phone')?.errors?.pattern"> يجب ادخال ارقام مكونة من 11 رقم!</div>
+                                                        
+                                                     </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-envelope-open-text"></i>
+                                                        </div>
+                                                        <label>البريد الالكتروني</label>
+                                                        <input type="email" 
+                                                        class="form-control" 
+                                                        placeholder="البريد الالكتروني" 
+                                                        name="email" id="name"
+                                                        formControlName="Mail">
+                                                    </div>
+                                                    <div class="alert alert-danger my-2" 
+                                                    *ngIf="form.get('Mail')?.invalid && (form.get('Mail')?.touched)">
+                                                        <p *ngIf="form.get('Mail')?.errors?.required">يجب ادخال البريد الالكتروني!</p>
+                                                        <p *ngIf="form.get('Mail')?.errors?.email">ادخل عنوان بريد الكتروني صحيح!</p>
+                                                     </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-map-marker-alt"></i>
+                                                        </div>
+                                                        <label>العنوان</label>
+                                                        <input type="text"
+                                                         class="form-control"
+                                                         placeholder="عنوانك"
+                                                         name="location" id="text"
+                                                         formControlName="Address">
+                                                    </div>
+                                                    <div class="alert alert-danger my-2" 
+                                                    *ngIf="form.get('Address')?.invalid && (form.get('Address')?.touched)">
+                                                        <p *ngIf="form.get('Address')?.errors?.required">يجب ادخال العنوان!</p>
+                                                     </div>
+                                                   
+                                                </div>
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-user-nurse"></i>
+                                                        </div>
+                                                        <label>اختار الخدمه</label>
+                                                        <div class="select">
+                                                            <select name="category_id" id="" formControlName="ServiceID">
+                                                                <option [value]="item.ServiceID" *ngFor="let item of services">{{item.ServiceName}}</option>
+                                                            </select>
+                                                        </div>
+                                                        <div class="alert alert-danger my-2" 
+                                                    *ngIf="form.get('ServiceID')?.invalid && (form.get('ServiceID')?.touched)">
+                                                        <p *ngIf="form.get('ServiceID')?.errors?.required">يجب ادخال الخدمة !</p>
+                                                     </div>
+                                                    </div>
+                                                </div><!-- ./col -->
+
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-phone-volume"></i>
+                                                        </div>
+                                                        <label>المهارات</label>
+                                                        <textarea name="skills" id="" cols="30" rows="3" 
+                                                        class="form-control" placeholder="المهارات"
+                                                        formControlName="Skills"
+                                                        ></textarea> 
+                                                    </div>
+                                                    <div class="alert alert-danger my-2" 
+                                                    *ngIf="form.get('Skills')?.invalid && (form.get('Skills')?.touched)">
+                                                        <p *ngIf="form.get('Skills')?.errors?.required">يجب ادخال المهارة !</p>
+                                                     </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-folder-open"></i>
+                                                        </div>
+                                                        <label>السيره الذاتيه</label>
+                                                        <input type="file" 
+                                                        class="form-control" 
+                                                        (change)="getCv($event)"
+                                                        placeholder="السيره الذاتيه"
+                                                        id="text" name="cv"
+                                                        formControlName="CV" accept="application/pdf" />>
+                                                    </div>
+                                                    <div class="alert alert-danger my-2" 
+                                                    *ngIf="form.get('CV')?.invalid && (form.get('CV')?.touched)">
+                                                        <p *ngIf="form.get('CV')?.errors?.required">يجب ادخال السيرة الذاتية !</p>
+                                                     </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-folder-open"></i>
+                                                        </div>
+                                                        <label>البطاقه الشخصيه</label>
+                                                        <input type="file" (change)="getCard($event)" class="form-cintrol"
+                                                         placeholder="البطاقة الشخصية" id="text" 
+                                                         name="cardId"
+                                                         formControlName="SyndicateID" accept="image/x-png,image/gif,image/jpeg">
+                                                    </div>
+                                                    <div class="alert alert-danger my-2" 
+                                                    *ngIf="form.get('SyndicateID')?.invalid && (form.get('SyndicateID')?.touched)">
+                                                        <p *ngIf="form.get('SyndicateID')?.errors?.required">يجب ادخال صورة البطاقة الشخصية !</p>
+                                                     </div>
+                                                </div><!-- ./col -->
+
+                                                <div class="col-lg-6 col-md-6">
+                                                    <div class="form-group">
+                                                        <div class="icon">
+                                                            <i class="fas fa-folder-open"></i>
+                                                        </div>
+                                                        <label>كارنيه النقابه</label>
+                                                        <input type="file" (change)="getNational($event)"class="form-cintrol"
+                                                         placeholder="كارنيه النقابه" 
+                                                         id="text" name="card"
+                                                         formControlName="NationalID" accept="image/x-png,image/gif,image/jpeg">
+                                                    </div>
+                                                    <div class="alert alert-danger my-2" 
+                                                    *ngIf="form.get('NationalID')?.invalid && (form.get('NationalID')?.touched)">
+                                                        <p *ngIf="form.get('NationalID')?.errors?.required">يجب ادخال كارنيه النقابه</p>
+                                                     </div>            </div><!-- ./col -->
+
+                                                <div class="col-lg-12 col-md-12 mt-5">
+                                                    <div class="more-services-btn">
+                                                        <button href="" class="btn btn-primary" [disabled]="form.invalid" (click)="checkValidForm()" type="submit">ارسل طلب
+                                                            <i class="fas fa-angle-right"></i>  
+                                                        </button> 
+                                                       
+                                                        <div class="alert alert-danger my-2" *ngIf="form.touched">
+                                                            <p *ngIf="form.invalid">يجب ادخال جميع الحقول  !</p> 
+                                                        </div> 
+                                                       
+                                                    </div>
+                                                </div><!-- ./col -->
+                                            </div>
+                                        </form>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

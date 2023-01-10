@@ -1,0 +1,16 @@
+<div class="parteners pd-t">
+    <div class="section-title w-100">
+        <h2>شركاء النجاح</h2>
+        <p>شركائنا في النجاح</p>
+    </div>
+
+    <div class="container">
+        <div class="customers-partner-list">
+            <div class="partner-item" *ngFor="let partner of images">
+                <a href="#"> 
+                    <img [src]="partner.imageUrl" alt="">  
+                </a>
+            </div><!--./partener-item-->
+        </div>
+    </div>
+</div>

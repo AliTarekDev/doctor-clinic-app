@@ -1,0 +1,17 @@
+<div class="page-title-area page-title-bg1">
+    <div class="d-table">
+        <div class="d-table-cell">
+            <div class="container">
+                <div class="page-title-content" *ngFor="let service of services">
+                    <h2>{{service.title}}</h2>
+                    <ul>
+                        <li><a routerLink="/">{{service.anchor}}</a></li>
+                        <li>{{service.content}}</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<app-services></app-services>

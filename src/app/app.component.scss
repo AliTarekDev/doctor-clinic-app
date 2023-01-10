@@ -1,0 +1,174 @@
+//$mainColor: #1462aa;
+$mainColor: #25D366;
+$liHover: #121521;
+@import url('https://fonts.googleapis.com/css2?family=Scheherazade:wght@400;700&display=swap');
+html,body {
+    font-family: 'Scheherazade', serif;
+}
+
+
+header {
+    background: transparent linear-gradient(90deg
+, $mainColor 0%, $mainColor 100%) 0% 0% no-repeat padding-box;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    color: #FFF;
+    text-align: right;
+}
+
+.white {
+    color: #ffffff !important;
+}
+.header-contact-info {
+    padding-left: 0;
+    margin-bottom: 0;
+    list-style-type: none;
+ 
+    li {
+        display: inline-block;
+        margin-right: 9px;
+        color: $mainColor;
+        font-family: din, din;
+        font-size: 14px;
+        i {
+            color: $mainColor;
+            margin-right: 4px;
+            width: 28px;
+            height: 28px;
+            display: inline-block;
+            line-height: 28px;
+            border-radius: 50%;
+            background-color: #ffffff12;
+            text-align: center;
+            font-size: 13px;
+            -webkit-transition: .5s;
+            transition: .5s;
+        }
+        &:hover i{
+            background-color: $mainColor;
+        }
+    }
+}
+
+
+
+.top {
+    position: fixed;
+    cursor: pointer;
+    bottom: 15px;
+    right: -40px;
+    background: transparent linear-gradient(
+90deg
+, $mainColor 0%, $mainColor 100%) 0% 0% no-repeat padding-box;
+    z-index: 4;
+    width: 40px;
+    text-align: center;
+    height: 40px;
+    line-height: 40px;
+    opacity: 0;
+    visibility: hidden;
+    -webkit-transition: .9s;
+    transition: .9s;
+    color: #ffffff;
+    border-radius: 3px;
+    font-size: 20px;
+}
+
+.top.active {
+    opacity: 1;
+    visibility: visible;
+    right: 15px;
+}
+
+.chat-icon {
+    position: fixed;
+    bottom: 73px;
+    right: 7px;
+    z-index: 9999;
+    transition: all .5s ease-in;
+
+     a {
+         color: $mainColor;
+        // background-color: #075E54;
+         background-color: #075E54;
+         border-radius: 50%;
+         display: inline-block;
+         padding: 10px 15px;
+         text-align: center;
+         transition: .5;
+         i {
+             color: inherit;
+             font-size: 30px;
+             line-height: 40px;
+         }
+         &:hover {
+             opacity: .9;
+         }
+     }
+}
+
+.phone {
+    .chat-icon {
+        bottom: 140px;
+        a {
+            background-color: #1462aa;
+        }
+    }
+}
+
+
+/*media*/
+
+@media(max-width: 767px) {
+    .header-contact-info {
+        text-align: center;
+        li {
+            display: inline-block;
+            font-size: 14px;
+            margin-bottom: 10px;
+            margin-right: 5px;
+            margin-left: 5px;
+        }
+    }
+
+
+    .social ul {
+        margin: auto;
+    }
+
+    .chat-icon {
+        position: fixed;
+        bottom: 85px;
+        right: 7px;
+        z-index: 9999;
+        transition: all .5s ease-in;
+    
+         a {
+             
+             i {
+                 color: inherit;
+                 font-size: 16px;
+                 line-height: 22px;
+             }
+         }
+    }
+
+    .book {
+        visibility: visible;
+        a {
+            padding: 10px 10px !important;
+        }
+    }
+    
+}
+
+@media only screen and (min-width: 768px) and (max-width: 991px){
+.header-contact-info {
+    text-align: center;
+}
+
+.social ul {
+    margin: auto;
+    text-align: center;
+}
+}

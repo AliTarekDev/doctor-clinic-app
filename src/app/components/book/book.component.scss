@@ -1,0 +1,149 @@
+//$mainColor: #1462aa;
+$mainColor: #25D366;
+
+.section-title {
+    text-align: right;
+    span {
+        text-transform: capitalize;
+    }
+}
+
+
+
+
+.appointment-area {
+    position: relative;
+    z-index: 1;
+    background-image: url('../../../assets/appointment.jpeg');
+    background-position: center center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    .appointment-content {
+        background-color: #fff;
+        padding: 50px;
+        position: relative;
+        z-index: 1;
+        -webkit-box-shadow: 0 2px 48px 0 rgb(0 0 0 / 8%);
+        box-shadow: 0 2px 48px 0 rgb(0 0 0 / 8%);
+        /* max-width: 700px; */
+        margin-left: auto;
+        margin-right: auto;
+    }
+}
+
+.products-details-tab {
+    margin-top: 50px;
+    .tab_content {
+        border: 1px dashed #eee;
+        padding: 30px;
+    }
+}
+
+.tab .tabs_item:first-child {
+    display: block;
+}
+
+form {
+    text-align: right;
+    margin-top: 5px;
+}
+
+.appointment-content form .form-group {
+        .icon {
+            position: absolute;
+            left: 0px;
+            top: 0;
+           // color: #1462aa;
+           color: $mainColor;
+            font-size: 35px;
+            i {
+                color: inherit;
+                font-size: inherit;
+                 background-color: transparent;
+
+            }
+        }
+
+        label {
+            display: block;
+            text-transform: uppercase;
+            color: #7d7d7d;
+            margin-bottom: 8px;
+            font-size: 13px;
+            font-weight: 500;
+        }
+        .form-control {
+            border: none;
+            height: auto;
+            border-bottom: 1px solid #eee;
+            font-size: 17px;
+            font-weight: 600;
+            padding-left: 0;
+            padding-right: 0;
+            padding-bottom: 8px;
+            width: 90%;
+        }
+
+}
+
+
+select {
+    /* Reset Select */
+    appearance: none;
+    outline: 0;
+    border: 0;
+    box-shadow: none;
+    /* Personalize */
+    flex: 1;
+    padding: 0 1em;
+    color: #000;
+    background-color: transparent;
+    background-image: none;
+    cursor: pointer;
+  }
+  /* Remove IE arrow */
+  select::-ms-expand {
+    display: none;
+  }
+  /* Custom Select wrapper */
+  .select {
+    position: relative;
+    background-color: transparent;
+    display: flex;
+    width: 20em;
+    height: 3em;
+    border-radius: .25em;
+    border-bottom: 1px solid #eee;
+    overflow: hidden;
+  }
+  /* Arrow */
+  .select::after {
+    content: '\25BC';
+    position: absolute;
+    top: 0;
+    right: -15px;
+    padding: 1em;
+    background-color: transparent;
+    transition: .25s all ease;
+    pointer-events: none;
+  }
+  /* Transition */
+  .select:hover::after {
+    color: $mainColor;
+  }
+
+  button {
+    cursor: pointer
+}
+
+@media (max-width: 575px) {
+    input, textarea {
+        margin-bottom: 15px;
+    }
+
+    label {
+        margin-top: 20px;
+    }
+}
+
